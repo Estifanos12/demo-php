@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  task-manager-api:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - ./database:/var/www/html/database
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html/public
+    restart: unless-stopped 
